@@ -2,6 +2,7 @@
 /// @brief Koopa Region - Pleasant Path Entry
 
 #include "common.h"
+#include "generated.h"
 #include "message_ids.h"
 #include "map.h"
 
