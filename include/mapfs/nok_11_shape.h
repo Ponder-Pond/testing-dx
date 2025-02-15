@@ -1,4 +1,13 @@
-#define MODEL_Root              0x63
+#define MODEL_Root              0x6C
+#define MODEL_AppleCar          0x6B
+#define MODEL_Wheels            0x6A
+#define MODEL_Rods              0x69
+#define MODEL_LightsCone        0x68
+#define MODEL_Lights            0x67
+#define MODEL_Window            0x66
+#define MODEL_Window            0x65
+#define MODEL_AppleBody         0x64
+#define MODEL_Leaf              0x63
 #define MODEL_suimen            0x62
 #define MODEL_suimen1           0x61
 #define MODEL_su1               0x60

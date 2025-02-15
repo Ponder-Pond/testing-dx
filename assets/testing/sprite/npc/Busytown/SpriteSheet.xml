@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SpriteSheet maxComponents="3" paletteGroups="6">
+	<PaletteList>
+		<Palette id="0" src="Lowly.png"/>
+		<Palette id="1" src="Cat.png"/>
+	</PaletteList>
+	<RasterList>
+		<Raster id="0" name="cat" palette="1" src="cat.png"/>
+		<Raster id="1" name="lowly1" palette="0" src="lowly1.png"/>
+		<Raster id="2" name="lowly2" palette="0" src="lowly2.png"/>
+	</RasterList>
+	<AnimationList>
+		<Animation name="Lowly1">
+			<Component name="Comp_00" xyz="2,-4,0">
+				<Command val="1001"/>
+				<Command val="2"/>
+				<Command val="2000"/>
+			</Component>
+			<Component name="Comp_01" xyz="-11,3,2">
+				<Command val="1FFF"/>
+				<Command val="2"/>
+				<Command val="2000"/>
+			</Component>
+		</Animation>
+		<Animation name="Lowly2">
+			<Component name="Comp_00" xyz="2,-4,0">
+				<Command val="1002"/>
+				<Command val="2"/>
+				<Command val="2000"/>
+			</Component>
+			<Component name="Comp_01" xyz="-11,3,2">
+				<Command val="1FFF"/>
+				<Command val="2"/>
+				<Command val="2000"/>
+			</Component>
+		</Animation>
+		<Animation name="Cat">
+			<Component name="Comp_00" xyz="2,-4,0">
+				<Command val="1000"/>
+				<Command val="2"/>
+				<Command val="2000"/>
+			</Component>
+			<Component name="Comp_01" xyz="-11,3,2">
+				<Command val="1FFF"/>
+				<Command val="2"/>
+				<Command val="2000"/>
+			</Component>
+		</Animation>
+	</AnimationList>
+</SpriteSheet>
