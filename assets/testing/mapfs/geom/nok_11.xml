@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Map desc="Pleasant Path Entry" background="nok_bg" textures="nok_tex">
 	<Editor>
-		<Camera pos="-276.848877,96.870461,31.061718" pitch="29.959976" yaw="0.479950"/>
+		<Camera pos="-315.627930,74.314514,67.072426" pitch="27.880024" yaw="357.280487"/>
 		<Camera pos="118.691406,65536.000000,26.170227"/>
 		<Camera pos="65536.000000,53.000000,-131.565033"/>
 		<Camera pos="-130.118988,81.266136,65536.000000"/>
@@ -138,8 +138,8 @@
 			<Node name="AppleCar" id="6B">
 				<Node name="Leaf" id="63"/>
 				<Node name="AppleBody" id="64"/>
-				<Node name="Window" id="65"/>
-				<Node name="Window" id="66"/>
+				<Node name="WindowTop" id="65"/>
+				<Node name="WindowBottom" id="66"/>
 				<Node name="Lights" id="67"/>
 				<Node name="LightsCone" id="68"/>
 				<Node name="Rods" id="69"/>
@@ -217,7 +217,7 @@
 		</Model>
 		<Model ver="2" type="MODEL" lightset="0">
 			<MapObject name="Wheels" id="6A"/>
-			<ShapeMesh ver="3" texture="wheeltif">
+			<ShapeMesh ver="3" texture="wheel">
 				<DisplayList>
 					<F3DEX2 cmd="E7000000,0"/>
 					<F3DEX2 cmd="D9FDFFFF,0"/>
@@ -686,7 +686,7 @@
 			</PropertyList>
 		</Model>
 		<Model ver="2" type="MODEL" lightset="0">
-			<MapObject name="Window" id="66"/>
+			<MapObject name="WindowBottom" id="66"/>
 			<ShapeMesh ver="3" texture="window">
 				<DisplayList>
 					<F3DEX2 cmd="E7000000,0"/>
@@ -726,7 +726,7 @@
 			</PropertyList>
 		</Model>
 		<Model ver="2" type="MODEL" lightset="0">
-			<MapObject name="Window" id="65"/>
+			<MapObject name="WindowTop" id="65"/>
 			<ShapeMesh ver="3" texture="window">
 				<DisplayList>
 					<F3DEX2 cmd="E7000000,0"/>
@@ -871,7 +871,7 @@
 		</Model>
 		<Model ver="2" type="MODEL" lightset="0">
 			<MapObject name="AppleBody" id="64"/>
-			<ShapeMesh ver="3" texture="appletif">
+			<ShapeMesh ver="3" texture="apple">
 				<DisplayList>
 					<F3DEX2 cmd="E7000000,0"/>
 					<F3DEX2 cmd="D9FDFFFF,0"/>
@@ -1275,7 +1275,7 @@
 		</Model>
 		<Model ver="2" type="MODEL" lightset="0">
 			<MapObject name="Leaf" id="63"/>
-			<ShapeMesh ver="3" texture="wheel2tif">
+			<ShapeMesh ver="3" texture="wheel2">
 				<DisplayList>
 					<F3DEX2 cmd="E7000000,0"/>
 					<F3DEX2 cmd="D9FDFFFF,0"/>
@@ -5626,7 +5626,7 @@
 		<Marker ver="4" type="NPC" pos="-275,0,-96" yaw="0.000000">
 			<MapObject name="Huckle" id="0"/>
 			<Movement type="Stationary" data="0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0"/>
-			<Sprite animation="ANIM_Busytown_Cat_Cat"/>
+			<Sprite animation="ANIM_Busytown_Cat_HuckleIdle"/>
 		</Marker>
 		<Marker ver="4" type="NPC" pos="-322,3,-33" yaw="0.000000">
 			<MapObject name="Lowly" id="FFFFFFFF"/>

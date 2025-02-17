@@ -6,7 +6,7 @@
 
 // type: Marker:NPC
 // name: Lowly
-// anim: ANIM_ParadeDrummer_Palette_Lowly_Lowly2
+// anim: ANIM_Busytown_Lowly_Lowly1
 #define GEN_LOWLY_X -322
 #define GEN_LOWLY_Y 3
 #define GEN_LOWLY_Z -33
@@ -17,7 +17,7 @@
 
 // type: Marker:NPC
 // name: Huckle
-// anim: ANIM_ParadeDrummer_Palette_Cat_Cat
+// anim: ANIM_Busytown_Cat_HuckleIdle
 #define GEN_HUCKLE_X -275
 #define GEN_HUCKLE_Y 0
 #define GEN_HUCKLE_Z -96

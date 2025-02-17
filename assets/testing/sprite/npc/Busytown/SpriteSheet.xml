@@ -5,14 +5,17 @@
 		<Palette id="1" src="Cat.png"/>
 	</PaletteList>
 	<RasterList>
-		<Raster id="0" name="cat" palette="1" src="cat.png"/>
-		<Raster id="1" name="lowly1" palette="0" src="lowly1.png"/>
-		<Raster id="2" name="lowly2" palette="0" src="lowly2.png"/>
+		<Raster id="0" name="huckleidle1" palette="1" src="huckleidle1.png"/>
+		<Raster id="1" name="huckleidle2" palette="1" src="huckleidle2.png"/>
+		<Raster id="2" name="huckletalk" palette="1" src="huckletalk.png"/>
+		<Raster id="3" name="lowly1" palette="0" src="lowly1.png"/>
+		<Raster id="4" name="lowly2" palette="0" src="lowly2.png"/>
+		<Raster id="5" name="lowly32" palette="0" src="lowly3.png"/>
 	</RasterList>
 	<AnimationList>
 		<Animation name="Lowly1">
 			<Component name="Comp_00" xyz="2,-4,0">
-				<Command val="1001"/>
+				<Command val="1003"/>
 				<Command val="2"/>
 				<Command val="2000"/>
 			</Component>
@@ -24,7 +27,7 @@
 		</Animation>
 		<Animation name="Lowly2">
 			<Component name="Comp_00" xyz="2,-4,0">
-				<Command val="1002"/>
+				<Command val="1005"/>
 				<Command val="2"/>
 				<Command val="2000"/>
 			</Component>
@@ -34,10 +37,38 @@
 				<Command val="2000"/>
 			</Component>
 		</Animation>
-		<Animation name="Cat">
+		<Animation name="HuckleStill">
 			<Component name="Comp_00" xyz="2,-4,0">
 				<Command val="1000"/>
 				<Command val="2"/>
+				<Command val="2000"/>
+			</Component>
+			<Component name="Comp_01" xyz="-11,3,2">
+				<Command val="1FFF"/>
+				<Command val="2"/>
+				<Command val="2000"/>
+			</Component>
+		</Animation>
+		<Animation name="HuckleIdle">
+			<Component name="Comp_00" xyz="2,-4,0">
+				<Command val="1000"/>
+				<Command val="24"/>
+				<Command val="1001"/>
+				<Command val="18"/>
+				<Command val="2000"/>
+			</Component>
+			<Component name="Comp_01" xyz="-11,3,2">
+				<Command val="1FFF"/>
+				<Command val="2"/>
+				<Command val="2000"/>
+			</Component>
+		</Animation>
+		<Animation name="HuckleTalk">
+			<Component name="Comp_00" xyz="2,-4,0">
+				<Command val="1000"/>
+				<Command val="6"/>
+				<Command val="1002"/>
+				<Command val="8"/>
 				<Command val="2000"/>
 			</Component>
 			<Component name="Comp_01" xyz="-11,3,2">

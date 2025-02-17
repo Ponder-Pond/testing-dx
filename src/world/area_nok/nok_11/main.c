@@ -69,25 +69,36 @@ EvtScript N(EVS_Main) = {
     Call(SetSpriteShading, SHADING_NONE)
     EVT_SETUP_CAMERA_DEFAULT(0, 0, 0)
     Set(GF_MAP_PleasantPath, TRUE)
-    IfEq(GB_StoryProgress, STORY_CH1_STAR_SPRIT_DEPARTED)
-        Call(MakeNpcs, FALSE, Ref(N(JrTroopaNPCs)))
-    Else
-        IfGe(GB_StoryProgress, STORY_CH5_RETURNED_TO_TOAD_TOWN)
-            IfEq(GF_NOK11_Defeated_KentC, FALSE)
-                Call(MakeNpcs, FALSE, Ref(N(KentCKoopaNPCs)))
-            Else
-                Call(MakeNpcs, FALSE, Ref(N(DefaultNPCs)))
-            EndIf
-        Else
-            Call(MakeNpcs, FALSE, Ref(N(DefaultNPCs)))
-        EndIf
-    EndIf
+    // IfEq(GB_StoryProgress, STORY_CH1_STAR_SPRIT_DEPARTED)
+    //     Call(MakeNpcs, FALSE, Ref(N(JrTroopaNPCs)))
+    // Else
+    //     IfGe(GB_StoryProgress, STORY_CH5_RETURNED_TO_TOAD_TOWN)
+    //         IfEq(GF_NOK11_Defeated_KentC, FALSE)
+    //             Call(MakeNpcs, FALSE, Ref(N(KentCKoopaNPCs)))
+    //         Else
+    //             Call(MakeNpcs, FALSE, Ref(N(DefaultNPCs)))
+    //         EndIf
+    //     Else
+    //         Call(MakeNpcs, FALSE, Ref(N(DefaultNPCs)))
+    //     EndIf
+    // EndIf
+    Call(MakeNpcs, FALSE, Ref(N(DefaultNPCs)))
     ExecWait(N(EVS_MakeEntities))
     Exec(N(EVS_SetupTexPan))
     Exec(N(EVS_SetupMusic))
     Call(PlaySound, SOUND_LOOP_NOK_WATER)
-    Set(LVar0, Ref(N(EVS_BindExitTriggers)))
-    Exec(EnterWalk)
+    Call(GetEntryID, LVar0)
+    Switch(LVar0)
+        CaseEq(nok_11_ENTRY_0)
+            Set(LVar0, Ref(N(EVS_BindExitTriggers)))
+            Exec(EnterWalk)
+        CaseEq(nok_11_ENTRY_1)
+            Set(LVar0, Ref(N(EVS_BindExitTriggers)))
+            Exec(EnterWalk)
+        CaseEq(nok_11_ENTRY_2)
+            Exec(N(EVS_BusytownCutscene))
+            Exec(N(EVS_BindExitTriggers))
+    EndSwitch
     Wait(1)
     Return
     End

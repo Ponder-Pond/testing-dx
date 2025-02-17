@@ -338,6 +338,7 @@ enum {
     nok_10_ENTRY_0   = 0,
     nok_11_ENTRY_0   = 0,
     nok_11_ENTRY_1   = 1,
+    nok_11_ENTRY_2   = 2,
     nok_12_ENTRY_0   = 0,
     nok_12_ENTRY_1   = 1,
     nok_12_ENTRY_2   = 2,

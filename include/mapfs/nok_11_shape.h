@@ -4,8 +4,8 @@
 #define MODEL_Rods              0x69
 #define MODEL_LightsCone        0x68
 #define MODEL_Lights            0x67
-#define MODEL_Window            0x66
-#define MODEL_Window            0x65
+#define MODEL_WindowBottom      0x66
+#define MODEL_WindowTop         0x65
 #define MODEL_AppleBody         0x64
 #define MODEL_Leaf              0x63
 #define MODEL_suimen            0x62

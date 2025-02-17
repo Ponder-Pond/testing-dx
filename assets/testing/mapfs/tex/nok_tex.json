@@ -820,7 +820,7 @@
         "combine": "Multiply"
     },
     {
-        "name": "appletif",
+        "name": "apple",
         "main": {
             "format": "CI4",
             "hwrap": "Clamp",
@@ -830,7 +830,7 @@
         "combine": "Multiply"
     },
     {
-        "name": "leaftif",
+        "name": "leaf",
         "main": {
             "format": "CI4",
             "hwrap": "Repeat",
@@ -840,7 +840,7 @@
         "combine": "Multiply"
     },
     {
-        "name": "wheeltif",
+        "name": "wheel",
         "main": {
             "format": "CI4",
             "hwrap": "Clamp",
@@ -850,7 +850,7 @@
         "combine": "Multiply"
     },
     {
-        "name": "wheel2tif",
+        "name": "wheel2",
         "main": {
             "format": "CI4",
             "hwrap": "Repeat",
