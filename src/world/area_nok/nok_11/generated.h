@@ -7,11 +7,11 @@
 // type: Marker:NPC
 // name: Lowly
 // anim: ANIM_Busytown_Lowly_Lowly1
-#define GEN_LOWLY_X -322
+#define GEN_LOWLY_X -486
 #define GEN_LOWLY_Y 3
 #define GEN_LOWLY_Z -33
-#define GEN_LOWLY_DIR 0
-#define GEN_LOWLY_VEC -322,3,-33
+#define GEN_LOWLY_DIR 180
+#define GEN_LOWLY_VEC -486,3,-33
 #define GEN_LOWLY_TERRITORY \
 {}
 
@@ -21,7 +21,7 @@
 #define GEN_HUCKLE_X -275
 #define GEN_HUCKLE_Y 0
 #define GEN_HUCKLE_Z -96
-#define GEN_HUCKLE_DIR 0
+#define GEN_HUCKLE_DIR 180
 #define GEN_HUCKLE_VEC -275,0,-96
 #define GEN_HUCKLE_TERRITORY \
 {}

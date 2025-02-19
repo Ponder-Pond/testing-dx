@@ -1,4 +1,5 @@
 #include "nok_11.h"
+#include "dx/debug_menu.h"
 
 // #include "world/common/enemy/Goomba_Wander.inc.c"
 // #include "world/common/enemy/KoopaTroopa_Wander.inc.c"
@@ -630,47 +631,63 @@
 //     {}
 // };
 
+EvtScript N(EVS_AppleCarDrive) = {
+    Loop(0)
+        Add(MapVar(0), 4)
+        Call(TranslateGroup, MODEL_AppleCar, MapVar(0), 0, 0)
+        Call(GetNpcPos, NPC_Lowly, LVar0, LVar1, LVar2)
+        Add(LVar0, 4)
+        Call(SetNpcPos, NPC_Lowly, LVar0, LVar1, LVar2)
+        Wait(1)
+    EndLoop
+    Return
+    End
+};
+
 EvtScript N(EVS_BusytownCutscene) = {
     Call(DisablePlayerInput, TRUE)
     Call(PlayerFaceNpc, NPC_Huckle, TRUE)
-    Call(NpcFacePlayer, NPC_Huckle, TRUE)
-    Wait(10)
     Call(SetNpcAnimation, NPC_Huckle, ANIM_Busytown_Cat_HuckleTalk)
-    Wait(10)
+    Wait(30)
     Call(SetNpcAnimation, NPC_Huckle, ANIM_Busytown_Cat_HuckleIdle)
-    Wait(5)
+    Wait(10)
     Call(SetPlayerAnimation, ANIM_Mario1_NodYes)
-    Wait(5)
+    Wait(15)
+    Exec(N(EVS_AppleCarDrive))
     Label(0)
-    Thread
-        Loop(0)
-            Call(GetNpcPos, NPC_Lowly, LVar0, LVar1, LVar2)
-            Add(LVar0, 20)
-            Call(NpcFlyTo, NPC_Lowly, LVar0, LVar1, LVar2, 10, 0, EASING_LINEAR)
-            Wait(1)
-        EndLoop
-    EndThread
-    Loop(0)
-        Switch(LVar3)
-            CaseGt(-322)
-                Call(PlayerFaceNpc, NPC_Lowly, TRUE)
-                Call(SetPlayerAnimation, ANIM_MarioW2_Surprise)
-                Wait(10)
-                Call(NpcFaceNpc, NPC_Huckle, NPC_Lowly, TRUE)
-            CaseGt(-200)
-                Call(PlayerFaceNpc, NPC_Lowly, TRUE)
-                Call(NpcFaceNpc, NPC_Huckle, NPC_Lowly, TRUE)
-            CaseGt(-160)
-                Call(PlayerFaceNpc, NPC_Huckle, TRUE)
-                Call(NpcFacePlayer, NPC_Huckle, TRUE)
-                Call(SetNpcAnimation, NPC_Huckle, ANIM_Busytown_Cat_HuckleTalk)
-                BreakLoop
-        EndSwitch
-        Add(LVar3, 20)
-        Call(TranslateGroup, LVar3, 0, 0, MODEL_AppleCar)
-        Wait(1)
-        Goto(0)
-    EndLoop
+    Switch(MapVar(0))
+        CaseEq(16)
+            DebugPrintf("CaseEq(16)")
+            Call(PlayerFaceNpc, NPC_Lowly, TRUE)
+            // Call(InterpPlayerYaw, 180, 0)
+            Call(SetPlayerAnimation, ANIM_MarioW2_Surprise)
+            // Wait(5)
+            Call(GetNpcYaw, NPC_Huckle, LVar4)
+            Sub(LVar4, 180)
+            Call(InterpNpcYaw, NPC_Huckle, LVar4, 6)
+            Wait(10)
+        CaseEq(248)
+            DebugPrintf("CaseEq(248)")
+            // Call(InterpPlayerYaw, 180, 0)
+            Call(PlayerFaceNpc, NPC_Lowly, TRUE)
+            Call(SetPlayerAnimation, ANIM_Mario1_Idle)
+            Call(GetNpcYaw, NPC_Huckle, LVar4)
+            Sub(LVar4, 180)
+            Call(InterpNpcYaw, NPC_Huckle, LVar4, 6)
+            Wait(10)
+        CaseEq(500)
+            DebugPrintf("CaseEq(500)")
+            Call(PlayerFaceNpc, NPC_Huckle, TRUE)
+            // Call(GetNpcYaw, NPC_Huckle, LVar4)
+            // Add(LVar4, 180)
+            // Call(InterpNpcYaw, NPC_Huckle, LVar4, 6)
+            Wait(15)
+            Call(SetNpcAnimation, NPC_Huckle, ANIM_Busytown_Cat_HuckleTalk)
+            Goto(1)
+    EndSwitch
+    Wait(1)
+    Goto(0)
+    Label(1)
     Call(DisablePlayerInput, FALSE)
     Return
     End
@@ -681,12 +698,7 @@ EvtScript N(EVS_NpcInit_Lowly) = {
     End
 };
 
-EvtScript N(EVS_NpcInit_Huckle) = {
-    Return
-    End
-};
-
-NpcData N(NpcData_Busytown)[] = {
+NpcData N(NpcData_Lowly)[] = {
     {
         .id = NPC_Lowly,
         .pos = { GEN_LOWLY_VEC },
@@ -698,6 +710,14 @@ NpcData N(NpcData_Busytown)[] = {
         .animations = LOWLY_ANIMS,
         // .tattle = MSG_NONE,
     },
+};
+
+EvtScript N(EVS_NpcInit_Huckle) = {
+    Return
+    End
+};
+
+NpcData N(NpcData_Huckle)[] = {
     {
         .id = NPC_Huckle,
         .pos = { GEN_HUCKLE_VEC },
@@ -712,6 +732,7 @@ NpcData N(NpcData_Busytown)[] = {
 };
 
 NpcGroupList N(DefaultNPCs) = {
-    NPC_GROUP(N(NpcData_Busytown)),
+    NPC_GROUP(N(NpcData_Lowly)),
+    NPC_GROUP(N(NpcData_Huckle)),
     {}
 };
