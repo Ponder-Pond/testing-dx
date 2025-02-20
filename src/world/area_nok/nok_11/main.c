@@ -86,7 +86,7 @@ EvtScript N(EVS_Main) = {
     ExecWait(N(EVS_MakeEntities))
     Exec(N(EVS_SetupTexPan))
     Exec(N(EVS_SetupMusic))
-    Call(PlaySound, SOUND_LOOP_NOK_WATER)
+    Call(PlaySoundWithVolume, SOUND_LOOP_NOK_WATER, 80)
     Call(GetEntryID, LVar0)
     Switch(LVar0)
         CaseEq(nok_11_ENTRY_0)

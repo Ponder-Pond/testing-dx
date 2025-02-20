@@ -1,6 +1,13 @@
-#define MODEL_Root              0x6C
-#define MODEL_AppleCar          0x6B
-#define MODEL_Wheels            0x6A
+#define MODEL_Root              0x73
+#define MODEL_Wheels4           0x72
+#define MODEL_Wheels            0x71
+#define MODEL_Wheels3           0x70
+#define MODEL_Wheels            0x6F
+#define MODEL_Wheels2           0x6E
+#define MODEL_Wheels            0x6D
+#define MODEL_Wheels1           0x6C
+#define MODEL_Wheels            0x6B
+#define MODEL_AppleCar          0x6A
 #define MODEL_Rods              0x69
 #define MODEL_LightsCone        0x68
 #define MODEL_Lights            0x67

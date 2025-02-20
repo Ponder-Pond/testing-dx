@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Map desc="Pleasant Path Entry" background="nok_bg" textures="nok_tex">
 	<Editor>
-		<Camera pos="-437.111420,45.278511,34.711082" pitch="14.719987" yaw="327.042664"/>
-		<Camera pos="10.658556,65536.000000,-4.370592"/>
-		<Camera pos="65536.000000,53.000000,-131.565033"/>
-		<Camera pos="-447.752655,-7.347329,65536.000000"/>
+		<Camera pos="-474.133514,42.231091,84.954224" pitch="-1.239927" yaw="6.721194"/>
+		<Camera pos="-493.003204,65536.000000,-18.530865"/>
+		<Camera pos="65536.000000,-0.993602,-9.387379"/>
+		<Camera pos="-499.867096,6.276969,65536.000000"/>
 	</Editor>
 	<ModelTree>
-		<Node name="Root" id="6C">
+		<Node name="Root" id="73">
 			<Node name="shima" id="46">
 				<Node name="bero1" id="2">
 					<Node name="o78" id="0"/>
@@ -135,7 +135,7 @@
 				<Node name="su1" id="60"/>
 				<Node name="suimen1" id="61"/>
 			</Node>
-			<Node name="AppleCar" id="6B">
+			<Node name="AppleCar" id="6A">
 				<Node name="Leaf" id="63"/>
 				<Node name="AppleBody" id="64"/>
 				<Node name="WindowTop" id="65"/>
@@ -143,7 +143,18 @@
 				<Node name="Lights" id="67"/>
 				<Node name="LightsCone" id="68"/>
 				<Node name="Rods" id="69"/>
-				<Node name="Wheels" id="6A"/>
+			</Node>
+			<Node name="Wheels1" id="6C">
+				<Node name="Wheels" id="6B"/>
+			</Node>
+			<Node name="Wheels2" id="6E">
+				<Node name="Wheels" id="6D"/>
+			</Node>
+			<Node name="Wheels3" id="70">
+				<Node name="Wheels" id="6F"/>
+			</Node>
+			<Node name="Wheels4" id="72">
+				<Node name="Wheels" id="71"/>
 			</Node>
 		</Node>
 	</ModelTree>
@@ -190,10 +201,12 @@
 		</Node>
 	</ZoneTree>
 	<MarkerTree>
-		<Node name="Root" id="2">
+		<Node name="Root" id="4">
 			<Node name="Lowly" id="FFFFFFFF"/>
 			<Node name="Huckle" id="0"/>
 			<Node name="MarioPos" id="1"/>
+			<Node name="Dummy1" id="2"/>
+			<Node name="Dummy2" id="3"/>
 		</Node>
 	</MarkerTree>
 	<LightSets>
@@ -204,20 +217,20 @@
 	</LightSets>
 	<Models>
 		<Model ver="2" type="ROOT" lightset="1">
-			<MapObject name="Root" id="6C" dumped="true" fileOffset="9BDC"/>
+			<MapObject name="Root" id="73" dumped="true" fileOffset="9BDC"/>
 			<BoundingBox empty="false" min="-900,-100,-358" max="1000,206,200"/>
 			<PropertyList>
 			</PropertyList>
 		</Model>
 		<Model ver="2" type="GROUP" lightset="0">
-			<MapObject name="AppleCar" id="6B"/>
-			<BoundingBox empty="false" min="-517,0,-52" max="-471,69,-12"/>
-			<TransformMatrix m="1.000000,0.000000,0.000000,-494.952278,0.000000,1.000000,0.000000,34.844973,0.000000,0.000000,1.000000,-33.009819,0.000000,0.000000,0.000000,1.000000"/>
+			<MapObject name="Wheels4" id="72"/>
+			<BoundingBox empty="false" min="-488,0,-29" max="-478,9,-29"/>
+			<TransformMatrix m="1.000000,0.000000,0.000000,-483.000000,0.000000,1.000000,0.000000,5.000000,0.000000,0.000000,1.000000,-29.000000,0.000000,0.000000,0.000000,1.000000"/>
 			<PropertyList>
 			</PropertyList>
 		</Model>
 		<Model ver="2" type="MODEL" lightset="0">
-			<MapObject name="Wheels" id="6A"/>
+			<MapObject name="Wheels" id="71"/>
 			<ShapeMesh ver="3" texture="wheel">
 				<DisplayList>
 					<F3DEX2 cmd="E7000000,0"/>
@@ -225,90 +238,42 @@
 					<F3DEX2 cmd="D9FFFFFF,200400"/>
 					<TriangleBatch ver="0">
 						<VertexTable>
-							<Vertex xyz="6,-25,15" uv="0,1024"/>
-							<Vertex xyz="15,-25,15" uv="1024,1024"/>
-							<Vertex xyz="6,-34,15"/>
-							<Vertex xyz="15,-34,15" uv="1024,0"/>
-							<Vertex xyz="6,-34,15"/>
-							<Vertex xyz="15,-25,15" uv="1024,1024"/>
-							<Vertex xyz="6,-34,-12"/>
-							<Vertex xyz="15,-25,-12" uv="1024,1024"/>
-							<Vertex xyz="6,-25,-12" uv="0,1024"/>
-							<Vertex xyz="15,-25,-12" uv="1024,1024"/>
-							<Vertex xyz="6,-34,-12"/>
-							<Vertex xyz="15,-34,-12" uv="1024,0"/>
 						</VertexTable>
 						<TriangleList>
-							<Triangle ijk="0,1,2"/>
-							<Triangle ijk="3,4,5"/>
-							<Triangle ijk="6,7,8"/>
-							<Triangle ijk="9,10,11"/>
 						</TriangleList>
 					</TriangleBatch>
 					<TriangleBatch ver="0">
 						<VertexTable>
-							<Vertex xyz="-11,-25,15" uv="0,1024"/>
-							<Vertex xyz="-1,-25,15" uv="1024,1024"/>
-							<Vertex xyz="-11,-34,15"/>
-							<Vertex xyz="-1,-34,15" uv="1024,0"/>
-							<Vertex xyz="-11,-34,15"/>
-							<Vertex xyz="-1,-25,15" uv="1024,1024"/>
-							<Vertex xyz="-11,-34,-12"/>
-							<Vertex xyz="-1,-25,-12" uv="1024,1024"/>
-							<Vertex xyz="-11,-25,-12" uv="0,1024"/>
-							<Vertex xyz="-1,-25,-12" uv="1024,1024"/>
-							<Vertex xyz="-11,-34,-12"/>
-							<Vertex xyz="-1,-34,-12" uv="1024,0"/>
+							<Vertex xyz="-5,4,0" uv="0,1024"/>
+							<Vertex xyz="5,4,0" uv="1024,1024"/>
+							<Vertex xyz="-5,-5,0"/>
+							<Vertex xyz="5,-5,0" uv="1024,0"/>
+							<Vertex xyz="-5,-5,0"/>
+							<Vertex xyz="5,4,0" uv="1024,1024"/>
 						</VertexTable>
 						<TriangleList>
 							<Triangle ijk="0,1,2"/>
 							<Triangle ijk="3,4,5"/>
-							<Triangle ijk="6,7,8"/>
-							<Triangle ijk="9,10,11"/>
 						</TriangleList>
 					</TriangleBatch>
 					<TriangleBatch ver="0">
 						<VertexTable>
-							<Vertex xyz="6,-25,15" uv="0,1024"/>
-							<Vertex xyz="6,-34,15"/>
-							<Vertex xyz="15,-25,15" uv="1024,1024"/>
-							<Vertex xyz="15,-34,15" uv="1024,0"/>
-							<Vertex xyz="15,-25,15" uv="1024,1024"/>
-							<Vertex xyz="6,-34,15"/>
-							<Vertex xyz="6,-34,-12"/>
-							<Vertex xyz="6,-25,-12" uv="0,1024"/>
-							<Vertex xyz="15,-25,-12" uv="1024,1024"/>
-							<Vertex xyz="15,-25,-12" uv="1024,1024"/>
-							<Vertex xyz="15,-34,-12" uv="1024,0"/>
-							<Vertex xyz="6,-34,-12"/>
 						</VertexTable>
 						<TriangleList>
-							<Triangle ijk="0,1,2"/>
-							<Triangle ijk="3,4,5"/>
-							<Triangle ijk="6,7,8"/>
-							<Triangle ijk="9,10,11"/>
 						</TriangleList>
 					</TriangleBatch>
 					<TriangleBatch ver="0">
 						<VertexTable>
-							<Vertex xyz="-11,-25,15" uv="0,1024"/>
-							<Vertex xyz="-11,-34,15"/>
-							<Vertex xyz="-1,-25,15" uv="1024,1024"/>
-							<Vertex xyz="-1,-34,15" uv="1024,0"/>
-							<Vertex xyz="-1,-25,15" uv="1024,1024"/>
-							<Vertex xyz="-11,-34,15"/>
-							<Vertex xyz="-11,-34,-12"/>
-							<Vertex xyz="-11,-25,-12" uv="0,1024"/>
-							<Vertex xyz="-1,-25,-12" uv="1024,1024"/>
-							<Vertex xyz="-1,-25,-12" uv="1024,1024"/>
-							<Vertex xyz="-1,-34,-12" uv="1024,0"/>
-							<Vertex xyz="-11,-34,-12"/>
+							<Vertex xyz="-5,4,0" uv="0,1024"/>
+							<Vertex xyz="-5,-5,0"/>
+							<Vertex xyz="5,4,0" uv="1024,1024"/>
+							<Vertex xyz="5,-5,0" uv="1024,0"/>
+							<Vertex xyz="5,4,0" uv="1024,1024"/>
+							<Vertex xyz="-5,-5,0"/>
 						</VertexTable>
 						<TriangleList>
 							<Triangle ijk="0,1,2"/>
 							<Triangle ijk="3,4,5"/>
-							<Triangle ijk="6,7,8"/>
-							<Triangle ijk="9,10,11"/>
 						</TriangleList>
 					</TriangleBatch>
 				</DisplayList>
@@ -316,6 +281,198 @@
 			<PropertyList>
 				<Property v="5C,0,D"/>
 				<Property v="5F,0,0"/>
+			</PropertyList>
+		</Model>
+		<Model ver="2" type="GROUP" lightset="0">
+			<MapObject name="Wheels3" id="70"/>
+			<BoundingBox empty="false" min="-505,0,-29" max="-495,9,-29"/>
+			<TransformMatrix m="1.000000,0.000000,0.000000,-500.000000,0.000000,1.000000,0.000000,5.000000,0.000000,0.000000,1.000000,-29.000000,0.000000,0.000000,0.000000,1.000000"/>
+			<PropertyList>
+			</PropertyList>
+		</Model>
+		<Model ver="2" type="MODEL" lightset="0">
+			<MapObject name="Wheels" id="6F"/>
+			<ShapeMesh ver="3" texture="wheel">
+				<DisplayList>
+					<F3DEX2 cmd="E7000000,0"/>
+					<F3DEX2 cmd="D9FDFFFF,0"/>
+					<F3DEX2 cmd="D9FFFFFF,200400"/>
+					<TriangleBatch ver="0">
+						<VertexTable>
+						</VertexTable>
+						<TriangleList>
+						</TriangleList>
+					</TriangleBatch>
+					<TriangleBatch ver="0">
+						<VertexTable>
+							<Vertex xyz="-5,4,0" uv="0,1024"/>
+							<Vertex xyz="5,4,0" uv="1024,1024"/>
+							<Vertex xyz="-5,-5,0"/>
+							<Vertex xyz="5,-5,0" uv="1024,0"/>
+							<Vertex xyz="-5,-5,0"/>
+							<Vertex xyz="5,4,0" uv="1024,1024"/>
+						</VertexTable>
+						<TriangleList>
+							<Triangle ijk="0,1,2"/>
+							<Triangle ijk="3,4,5"/>
+						</TriangleList>
+					</TriangleBatch>
+					<TriangleBatch ver="0">
+						<VertexTable>
+						</VertexTable>
+						<TriangleList>
+						</TriangleList>
+					</TriangleBatch>
+					<TriangleBatch ver="0">
+						<VertexTable>
+							<Vertex xyz="-5,4,0" uv="0,1024"/>
+							<Vertex xyz="-5,-5,0"/>
+							<Vertex xyz="5,4,0" uv="1024,1024"/>
+							<Vertex xyz="5,-5,0" uv="1024,0"/>
+							<Vertex xyz="5,4,0" uv="1024,1024"/>
+							<Vertex xyz="-5,-5,0"/>
+						</VertexTable>
+						<TriangleList>
+							<Triangle ijk="0,1,2"/>
+							<Triangle ijk="3,4,5"/>
+						</TriangleList>
+					</TriangleBatch>
+				</DisplayList>
+			</ShapeMesh>
+			<PropertyList>
+				<Property v="5C,0,D"/>
+				<Property v="5F,0,0"/>
+			</PropertyList>
+		</Model>
+		<Model ver="2" type="GROUP" lightset="0">
+			<MapObject name="Wheels2" id="6E"/>
+			<BoundingBox empty="false" min="-488,0,-2" max="-478,9,-2"/>
+			<TransformMatrix m="1.000000,0.000000,0.000000,-483.000000,0.000000,1.000000,0.000000,5.000000,0.000000,0.000000,1.000000,-2.000000,0.000000,0.000000,0.000000,1.000000"/>
+			<PropertyList>
+			</PropertyList>
+		</Model>
+		<Model ver="2" type="MODEL" lightset="0">
+			<MapObject name="Wheels" id="6D"/>
+			<ShapeMesh ver="3" texture="wheel">
+				<DisplayList>
+					<F3DEX2 cmd="E7000000,0"/>
+					<F3DEX2 cmd="D9FDFFFF,0"/>
+					<F3DEX2 cmd="D9FFFFFF,200400"/>
+					<TriangleBatch ver="0">
+						<VertexTable>
+						</VertexTable>
+						<TriangleList>
+						</TriangleList>
+					</TriangleBatch>
+					<TriangleBatch ver="0">
+						<VertexTable>
+							<Vertex xyz="-5,4,0" uv="0,1024"/>
+							<Vertex xyz="5,4,0" uv="1024,1024"/>
+							<Vertex xyz="-5,-5,0"/>
+							<Vertex xyz="5,-5,0" uv="1024,0"/>
+							<Vertex xyz="-5,-5,0"/>
+							<Vertex xyz="5,4,0" uv="1024,1024"/>
+						</VertexTable>
+						<TriangleList>
+							<Triangle ijk="0,1,2"/>
+							<Triangle ijk="3,4,5"/>
+						</TriangleList>
+					</TriangleBatch>
+					<TriangleBatch ver="0">
+						<VertexTable>
+						</VertexTable>
+						<TriangleList>
+						</TriangleList>
+					</TriangleBatch>
+					<TriangleBatch ver="0">
+						<VertexTable>
+							<Vertex xyz="-5,4,0" uv="0,1024"/>
+							<Vertex xyz="-5,-5,0"/>
+							<Vertex xyz="5,4,0" uv="1024,1024"/>
+							<Vertex xyz="5,-5,0" uv="1024,0"/>
+							<Vertex xyz="5,4,0" uv="1024,1024"/>
+							<Vertex xyz="-5,-5,0"/>
+						</VertexTable>
+						<TriangleList>
+							<Triangle ijk="0,1,2"/>
+							<Triangle ijk="3,4,5"/>
+						</TriangleList>
+					</TriangleBatch>
+				</DisplayList>
+			</ShapeMesh>
+			<PropertyList>
+				<Property v="5C,0,D"/>
+				<Property v="5F,0,0"/>
+			</PropertyList>
+		</Model>
+		<Model ver="2" type="GROUP" lightset="0">
+			<MapObject name="Wheels1" id="6C"/>
+			<BoundingBox empty="false" min="-505,0,-2" max="-495,9,-2"/>
+			<TransformMatrix m="1.000000,0.000000,0.000000,-500.000000,0.000000,1.000000,0.000000,5.000000,0.000000,0.000000,1.000000,-2.000000,0.000000,0.000000,0.000000,1.000000"/>
+			<PropertyList>
+				<Property v="60,0,0"/>
+				<Property v="60,0,1"/>
+			</PropertyList>
+		</Model>
+		<Model ver="2" type="MODEL" lightset="0">
+			<MapObject name="Wheels" id="6B"/>
+			<ShapeMesh ver="3" texture="wheel">
+				<DisplayList>
+					<F3DEX2 cmd="E7000000,0"/>
+					<F3DEX2 cmd="D9FDFFFF,0"/>
+					<F3DEX2 cmd="D9FFFFFF,200400"/>
+					<TriangleBatch ver="0">
+						<VertexTable>
+						</VertexTable>
+						<TriangleList>
+						</TriangleList>
+					</TriangleBatch>
+					<TriangleBatch ver="0">
+						<VertexTable>
+							<Vertex xyz="-5,4,0" uv="0,1024"/>
+							<Vertex xyz="5,4,0" uv="1024,1024"/>
+							<Vertex xyz="-5,-5,0"/>
+							<Vertex xyz="5,-5,0" uv="1024,0"/>
+							<Vertex xyz="-5,-5,0"/>
+							<Vertex xyz="5,4,0" uv="1024,1024"/>
+						</VertexTable>
+						<TriangleList>
+							<Triangle ijk="0,1,2"/>
+							<Triangle ijk="3,4,5"/>
+						</TriangleList>
+					</TriangleBatch>
+					<TriangleBatch ver="0">
+						<VertexTable>
+						</VertexTable>
+						<TriangleList>
+						</TriangleList>
+					</TriangleBatch>
+					<TriangleBatch ver="0">
+						<VertexTable>
+							<Vertex xyz="-5,4,0" uv="0,1024"/>
+							<Vertex xyz="-5,-5,0"/>
+							<Vertex xyz="5,4,0" uv="1024,1024"/>
+							<Vertex xyz="5,-5,0" uv="1024,0"/>
+							<Vertex xyz="5,4,0" uv="1024,1024"/>
+							<Vertex xyz="-5,-5,0"/>
+						</VertexTable>
+						<TriangleList>
+							<Triangle ijk="0,1,2"/>
+							<Triangle ijk="3,4,5"/>
+						</TriangleList>
+					</TriangleBatch>
+				</DisplayList>
+			</ShapeMesh>
+			<PropertyList>
+				<Property v="5C,0,D"/>
+				<Property v="5F,0,0"/>
+			</PropertyList>
+		</Model>
+		<Model ver="2" type="GROUP" lightset="0">
+			<MapObject name="AppleCar" id="6A"/>
+			<BoundingBox empty="false" min="-517,4,-36" max="-471,69,3"/>
+			<TransformMatrix m="1.000000,0.000000,0.000000,-494.952278,0.000000,1.000000,0.000000,34.844973,0.000000,0.000000,1.000000,-17.009819,0.000000,0.000000,0.000000,1.000000"/>
+			<PropertyList>
 			</PropertyList>
 		</Model>
 		<Model ver="2" type="MODEL" lightset="0">
@@ -5619,17 +5776,23 @@
 	</Zones>
 	<Markers>
 		<Marker ver="4" type="Root">
-			<MapObject name="Root" id="2"/>
+			<MapObject name="Root" id="4"/>
 		</Marker>
-		<Marker ver="4" type="Position" pos="-248,0,-96" yaw="0.000000">
+		<Marker ver="4" type="Position" pos="-197,-1000,-67" yaw="0.000000">
+			<MapObject name="Dummy2" id="3"/>
+		</Marker>
+		<Marker ver="4" type="Position" pos="-344,-1000,-67" yaw="0.000000">
+			<MapObject name="Dummy1" id="2"/>
+		</Marker>
+		<Marker ver="4" type="Position" pos="-248,0,-67" yaw="0.000000">
 			<MapObject name="MarioPos" id="1"/>
 		</Marker>
-		<Marker ver="4" type="NPC" pos="-275,0,-96" yaw="180.000000">
+		<Marker ver="4" type="NPC" pos="-288,0,-67" yaw="180.000000">
 			<MapObject name="Huckle" id="0"/>
 			<Movement type="Stationary" data="0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0"/>
 			<Sprite animation="ANIM_Busytown_Cat_HuckleIdle"/>
 		</Marker>
-		<Marker ver="4" type="NPC" pos="-486,3,-33" yaw="180.000000">
+		<Marker ver="4" type="NPC" pos="-486,3,-17" yaw="180.000000">
 			<MapObject name="Lowly" id="FFFFFFFF"/>
 			<Movement type="Stationary" data="0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0"/>
 			<Sprite animation="ANIM_Busytown_Lowly_Lowly1"/>

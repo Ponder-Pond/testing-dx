@@ -1,5 +1,5 @@
 #include "nok_11.h"
-#include "dx/debug_menu.h"
+// #include "dx/debug_menu.h"
 
 // #include "world/common/enemy/Goomba_Wander.inc.c"
 // #include "world/common/enemy/KoopaTroopa_Wander.inc.c"
@@ -635,9 +635,29 @@ EvtScript N(EVS_AppleCarDrive) = {
     Loop(0)
         Add(MapVar(0), 4)
         Call(TranslateGroup, MODEL_AppleCar, MapVar(0), 0, 0)
+        Call(TranslateGroup, MODEL_Wheels1, MapVar(0), 0, 0)
+        Call(TranslateGroup, MODEL_Wheels2, MapVar(0), 0, 0)
+        Call(TranslateGroup, MODEL_Wheels3, MapVar(0), 0, 0)
+        Call(TranslateGroup, MODEL_Wheels4, MapVar(0), 0, 0)
         Call(GetNpcPos, NPC_Lowly, LVar0, LVar1, LVar2)
         Add(LVar0, 4)
         Call(SetNpcPos, NPC_Lowly, LVar0, LVar1, LVar2)
+        Wait(1)
+    EndLoop
+    Return
+    End
+};
+
+EvtScript N(EVS_AppleCarWheels) = {
+    Loop(0)
+        Add(LVar0, 20)
+        IfGt(LVar0, 359)
+            Sub(LVar0, 360)
+        EndIf
+        Call(RotateGroup, MODEL_Wheels1, LVar0, 0, 0, 1)
+        Call(RotateGroup, MODEL_Wheels2, LVar0, 0, 0, 1)
+        Call(RotateGroup, MODEL_Wheels3, LVar0, 0, 0, 1)
+        Call(RotateGroup, MODEL_Wheels4, LVar0, 0, 0, 1)
         Wait(1)
     EndLoop
     Return
@@ -654,34 +674,40 @@ EvtScript N(EVS_BusytownCutscene) = {
     Call(SetPlayerAnimation, ANIM_Mario1_NodYes)
     Wait(15)
     Exec(N(EVS_AppleCarDrive))
+    Exec(N(EVS_AppleCarWheels))
     Label(0)
     Switch(MapVar(0))
         CaseEq(16)
-            DebugPrintf("CaseEq(16)")
-            Call(PlayerFaceNpc, NPC_Lowly, TRUE)
+            // DebugPrintf("CaseEq(16)")
+            Call(PlayerFaceNpc, NPC_Dummy1, TRUE)
             // Call(InterpPlayerYaw, 180, 0)
             Call(SetPlayerAnimation, ANIM_MarioW2_Surprise)
-            // Wait(5)
-            Call(GetNpcYaw, NPC_Huckle, LVar4)
-            Sub(LVar4, 180)
-            Call(InterpNpcYaw, NPC_Huckle, LVar4, 6)
+            Call(PlaySoundAtPlayer, SOUND_EMOTE_IDEA, SOUND_SPACE_DEFAULT)
+            Call(ShowEmote, 0, EMOTE_EXCLAMATION, 0, 15, EMOTER_PLAYER, 0, 0, 0, 0)
+            Wait(15)
+            Call(NpcFaceNpc, NPC_Huckle, NPC_Dummy2, 0)
+            // Call(GetNpcYaw, NPC_Huckle, LVar4)
+            // Sub(LVar4, 180)
+            // Call(InterpNpcYaw, NPC_Huckle, LVar4, 6)
             Wait(10)
-        CaseEq(248)
-            DebugPrintf("CaseEq(248)")
+        CaseEq(260)
+            // DebugPrintf("CaseEq(260)")
             // Call(InterpPlayerYaw, 180, 0)
-            Call(PlayerFaceNpc, NPC_Lowly, TRUE)
+            Call(PlayerFaceNpc, NPC_Dummy2, TRUE)
             Call(SetPlayerAnimation, ANIM_Mario1_Idle)
-            Call(GetNpcYaw, NPC_Huckle, LVar4)
-            Sub(LVar4, 180)
-            Call(InterpNpcYaw, NPC_Huckle, LVar4, 6)
+            Call(NpcFaceNpc, NPC_Huckle, NPC_Dummy1, 0)
+            // Call(GetNpcYaw, NPC_Huckle, LVar4)
+            // Sub(LVar4, 180)
+            // Call(InterpNpcYaw, NPC_Huckle, LVar4, 6)
             Wait(10)
         CaseEq(500)
-            DebugPrintf("CaseEq(500)")
+            // DebugPrintf("CaseEq(500)")
             Call(PlayerFaceNpc, NPC_Huckle, TRUE)
             // Call(GetNpcYaw, NPC_Huckle, LVar4)
             // Add(LVar4, 180)
             // Call(InterpNpcYaw, NPC_Huckle, LVar4, 6)
-            Wait(15)
+            // Call(NpcFacePlayer, NPC_Huckle, 0)
+            Wait(10)
             Call(SetNpcAnimation, NPC_Huckle, ANIM_Busytown_Cat_HuckleTalk)
             Goto(1)
     EndSwitch
@@ -731,8 +757,38 @@ NpcData N(NpcData_Huckle)[] = {
     },
 };
 
+NpcData N(NpcData_Dummy1)[] = {
+    {
+        .id = NPC_Dummy1,
+        .pos = { GEN_DUMMY1_VEC },
+        .yaw = 0,
+        .init = &N(EVS_NpcInit_Lowly),
+        .settings = &N(NpcSettings_Lowly_Stationary),
+        .flags = BASE_PASSIVE_FLAGS,
+        .drops = NO_DROPS,
+        .animations = LOWLY_ANIMS,
+        // .tattle = MSG_NONE,
+    },
+};
+
+NpcData N(NpcData_Dummy2)[] = {
+    {
+        .id = NPC_Dummy2,
+        .pos = { GEN_DUMMY2_VEC },
+        .yaw = 0,
+        .init = &N(EVS_NpcInit_Lowly),
+        .settings = &N(NpcSettings_Lowly_Stationary),
+        .flags = BASE_PASSIVE_FLAGS,
+        .drops = NO_DROPS,
+        .animations = LOWLY_ANIMS,
+        // .tattle = MSG_NONE,
+    },
+};
+
 NpcGroupList N(DefaultNPCs) = {
     NPC_GROUP(N(NpcData_Lowly)),
     NPC_GROUP(N(NpcData_Huckle)),
+    NPC_GROUP(N(NpcData_Dummy1)),
+    NPC_GROUP(N(NpcData_Dummy2)),
     {}
 };

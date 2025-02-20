@@ -18,6 +18,8 @@
 enum {
     NPC_Lowly,
     NPC_Huckle,
+    NPC_Dummy1,
+    NPC_Dummy2,
     // NPC_KoopaTroopa             = 0,
     // NPC_Paragoomba              = 2,
     // NPC_SpikedGoomba            = 4,

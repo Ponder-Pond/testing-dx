@@ -1,7 +1,8 @@
 #include "nok_11.h"
 
 EvtScript N(EVS_SetupMusic) = {
-    Call(SetMusicTrack, 0, SONG_PLEASANT_PATH, 0, 8)
+    Call(FadeOutMusic, 0, 1000)
+    // Call(SetMusicTrack, 0, SONG_PLEASANT_PATH, 0, 8)
     Return
     End
 };

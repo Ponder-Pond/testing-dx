@@ -4,13 +4,13 @@
 /// Creates the version string that appears on the file select menu.
 /// Also used to sign save files created with this mod.
 /// WARNING: name must not exceed 27 characters!
-#define DX_MOD_NAME "New Mod"
+#define DX_MOD_NAME "Busytown Showcase"
 #define DX_MOD_VER_MAJOR 1 /// Increase this when you make breaking changes to the savefile format (like reordering items)
 #define DX_MOD_VER_MINOR 0 /// Increase this when adding new features or other enchancements
 #define DX_MOD_VER_PATCH 0 /// Increase this when fixing bugs
 
 /// Enables the debug menu.
-#define DX_DEBUG_MENU 1
+#define DX_DEBUG_MENU 0
 
 /// Loads last used save file.
 #define DX_QUICK_LAUNCH 0
